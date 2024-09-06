@@ -1,3 +1,5 @@
+# all the inline text, normal, bold, italic...
+
 class Textnode:
   def __init__(self, text, text_type, url=None):
     self.text = text

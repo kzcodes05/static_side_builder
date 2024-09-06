@@ -1,3 +1,5 @@
+# a node in an HTML Document tree <p> tag and its content, <a> tag and its content...
+
 class HTMLNode:
   def __init__(self, tag=None, value=None, children=None, props=None):
     self.tag = tag # string
