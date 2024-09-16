@@ -2,6 +2,7 @@ from textnode import *
 from htmlnode import *
 from leafnode import *
 from parentnode import *
+import re
 
 def main():
   dummy = Textnode("Dummy Node", "bold", "google.com")
@@ -26,4 +27,14 @@ def text_node_to_html_node(text_node):
     case _:
       raise Exception("invalid text type")
 
+
+def extract_markdown_images(text):
+  image_regex = re.compile(r"!\[(.*?)\]\((.*?)\)")
+  matches = image_regex.findall(text)
+  return matches
+
+def extract_markdown_links(text):
+  link_regex = re.compile(r"(?<!!)\[(.*?)\]\((.*?)\)")
+  matches = link_regex.findall(text)
+  return matches
 main()
